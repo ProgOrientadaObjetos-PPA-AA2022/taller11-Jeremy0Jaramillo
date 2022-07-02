@@ -9,40 +9,30 @@ package paquete02;
  * @author SALA I
  */
 public abstract class Menu {
+    protected String nombrePlato;
+    protected double valorInicialMenu;
     
-    protected Propietario arrendatario;
-    protected double arriendoMensual;
-    protected double cuotaBase;
-    
-    public Arriendo(Propietario n, double cuotaB){
-        arrendatario = n;
-        cuotaBase = cuotaB;
+    public Menu(String n, double m){
+        nombrePlato = n;
+        valorInicialMenu = m;
     }
     
-    public void establecerArrendatario (Propietario n){
-        arrendatario = n;
+    public void establecerNombrePlato (String n){
+        nombrePlato = n;
     }
     
-    public void establecerCuotaBase(double x){
-        cuotaBase = x;
+    public void establecerValorInicialMenu(double x){
+        valorInicialMenu = x;
     }
     
-    public abstract void establecerArriendoMensual();
+    public abstract void establecerValorMenu();
     
-    public Propietario obtenerArrendatario(){
-        return arrendatario;
+    public String obtenerNombrePlato(){
+        return nombrePlato;
     }
     
-    
-    public double obtenerCuotaBase(){
-        return cuotaBase;
+    public double obtenerValorInicialMenu(){
+        return valorInicialMenu;
     }
     
-    public double obtenerArriendoMensual(){
-        return arriendoMensual;
-    }
-    
-    public Propietario obtenerPropietario(){
-        return arrendatario;
-    }
 }

@@ -15,6 +15,8 @@ public class Cuenta {
     protected double subtotal;
     protected double iva;
     protected ArrayList<Menu> listaCartas;
+    protected double valorCancelar;
+    
     
     public Cuenta(String n, ArrayList<Menu> listam, double m){
         nombreCliente = n;
@@ -33,6 +35,14 @@ public class Cuenta {
     public void establecerIva(double n){
         iva = n;
     }
+    
+    public void establecerSubtotal(double n){
+        double suma = 0;
+        for (int i = 0; i < listaCartas.size(); i++) {
+            suma = suma + listaCartas.get(i).obtenerValorMenu();
+        }
+        subtotal = suma;
+    }
         
     public ArrayList<Menu> obtenerListaCartas(){
         return listaCartas;
@@ -44,5 +54,9 @@ public class Cuenta {
     
     public double obtenerIva(){
         return iva;
+    }
+    
+    public double obtenerSubtotal(){
+        return subtotal;
     }
 }
