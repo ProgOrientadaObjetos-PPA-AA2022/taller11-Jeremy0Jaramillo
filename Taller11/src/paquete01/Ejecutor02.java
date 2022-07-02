@@ -6,7 +6,7 @@
 package paquete01;
 
 import java.util.ArrayList;
-
+import paquete02.Cuenta;
 /**
  *
  * @author reroes
