@@ -36,7 +36,11 @@ public class Cuenta {
         iva = n;
     }
     
-    public void establecerSubtotal(double n){
+    public void establecerValorCancelar(){
+        valorCancelar = subtotal + (subtotal*(iva/100));
+    }
+    
+    public void establecerSubtotal(){
         double suma = 0;
         for (int i = 0; i < listaCartas.size(); i++) {
             suma = suma + listaCartas.get(i).obtenerValorMenu();
@@ -58,5 +62,9 @@ public class Cuenta {
     
     public double obtenerSubtotal(){
         return subtotal;
+    }
+    
+    public double obtenerValorCancelar(){
+        return valorCancelar;
     }
 }

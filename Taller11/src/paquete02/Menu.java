@@ -11,6 +11,7 @@ package paquete02;
 public abstract class Menu {
     protected String nombrePlato;
     protected double valorInicialMenu;
+    protected double valorMenu;
     
     public Menu(String n, double m){
         nombrePlato = n;
@@ -33,6 +34,10 @@ public abstract class Menu {
     
     public double obtenerValorInicialMenu(){
         return valorInicialMenu;
+    }
+    
+    public double obtenerValorMenu(){
+        return valorMenu;
     }
     
 }
