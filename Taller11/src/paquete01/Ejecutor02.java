@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package paquete01;
-
 import java.util.ArrayList;
 import paquete02.Cuenta;
 import paquete02.Menu;
+import paquete03.MenuCarta;
+import paquete03.MenuDia;
+import paquete03.MenuEconomico;
 import paquete03.MenuNiños;
 /**
  *
@@ -39,7 +41,7 @@ public class Ejecutor02 {
                 
         
         // Lista de Menus
-        ArrayList lista = new ArrayList<Menu>();
+        ArrayList <Menu> lista = new ArrayList();
         
         /* Agregar un proceso para generar objetos de tipo Menu Carta, Día, 
         Economico y Niño*. Cada arreglo datos, se corresponde a un tipo de Menú.
@@ -52,32 +54,38 @@ public class Ejecutor02 {
                         Double.parseDouble(datos001[i][1]),
                         Integer.parseInt(datos001[i][2]),
                         Double.parseDouble(datos001[i][3]));
-                n1.calcularValorMenu();
                 lista.add(n1);
         }
         
         for (int i = 0; i < datos002.length; i++) {
-                MenuEconomico e1 = new MenuEconomico(datos002[i][j]);
-                e1.calcularValorMenu();
+                MenuEconomico e1 = new MenuEconomico(datos002[i][0],
+                        Double.parseDouble(datos002[i][1]),
+                        Double.parseDouble(datos002[i][2]));
                 lista.add(e1);
         }
         
         for (int i = 0; i < datos003.length; i++) {
-                MenuDia d1 = new MenuDia(datos003[i][j]);
-                d1.calcularValorMenu();
+                MenuDia d1 = new MenuDia(datos003[i][0],
+                        Double.parseDouble(datos003[i][1]),
+                        Double.parseDouble(datos003[i][2]),
+                        Double.parseDouble(datos003[i][3]));
                 lista.add(d1);
             }
-        }
         
-        for (int i = 0; i < datos004.length; i++) {
-                MenuCarta c1 = new MenuCarta(datos004[i][j]);
-                c1.calcularValorMenu();
+        
+        for (int i = 0; i < datos004.length ; i++) {
+                MenuCarta c1 = new MenuCarta(datos004[i][0],
+                        Double.parseDouble(datos004[i][1]),
+                        Double.parseDouble(datos004[i][2]),
+                        Double.parseDouble(datos004[i][3]),
+                        Double.parseDouble(datos004[i][4]));
                 lista.add(c1);
         }
+    
         
         // Fin de solución
         
-        
+    
         for (int i = 0; i < lista.size(); i++) {
             lista.get(i).establecerValorMenu();
         }
@@ -89,6 +97,7 @@ public class Ejecutor02 {
         System.out.printf("%s\n", miCuenta);
         
 
-
+    
     }
 }
+
